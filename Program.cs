@@ -2,20 +2,24 @@
 
 try
 {
-    Console.WriteLine("Ingrese el dividendo:");
-    int dividendo = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Ingrese el divisor:");
-    int divisor = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Ingrese los kilometros:");
+    int kilometros = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Ingrese los litros:");
+    int litros = Convert.ToInt32(Console.ReadLine());
 
 
 
-    int cociente = dividendo / divisor;
+    int kilometrosPorLitro = kilometros / litros;
 
 
-    Console.WriteLine("Resultado:" + cociente);
+    Console.WriteLine("Kilometros por litro:" + kilometrosPorLitro);
 
 }
-catch (Exception e)
+catch (DivideByZeroException e)
 {
-    Console.WriteLine(e.Message);
+    Console.WriteLine("No se puede dividir en 0 " + e.Message);
+}
+catch (FormatException e)
+{
+    Console.WriteLine("metiste una letra " + e.Message);
 }
