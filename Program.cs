@@ -2,16 +2,20 @@
 
 try
 {
-    Console.WriteLine("Ingrese la base:");
-    Double num = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Ingrese el dividendo:");
+    int dividendo = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Ingrese el divisor:");
+    int divisor = Convert.ToInt32(Console.ReadLine());
 
-    Double cuadrado = num * num;
 
 
-    Console.WriteLine("Cuadrado:" + cuadrado);
-    Console.ReadKey();
+    int cociente = dividendo / divisor;
+
+
+    Console.WriteLine("Resultado:" + cociente);
+
 }
-catch (FormatException e)
+catch (Exception e)
 {
-    Console.WriteLine("Valor invalido: " + e.Message);
+    Console.WriteLine(e.Message);
 }
