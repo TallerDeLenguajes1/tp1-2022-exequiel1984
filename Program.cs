@@ -34,6 +34,6 @@ static int CalculoCuadrado()
     }
     finally
     {
-        Console.WriteLine("GAME OVER");
+        Console.WriteLine("FIN");
     }
 }
