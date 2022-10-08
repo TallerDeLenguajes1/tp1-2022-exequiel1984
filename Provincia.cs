@@ -1,9 +1,8 @@
 // Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
 
 using System.Collections.Generic;
-using System.Text.Json.Serealization;
 
-namespace Name
+namespace ProvinciasID
 {
     public class Parametros
         {
