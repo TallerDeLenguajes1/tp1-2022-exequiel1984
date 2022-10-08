@@ -1,25 +1,39 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Text.Json;
 
-try
+namespace ProvinciasID
 {
-    Console.WriteLine("Ingrese los kilometros:");
-    int kilometros = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Ingrese los litros:");
-    int litros = Convert.ToInt32(Console.ReadLine());
+    
 
-
-
-    int kilometrosPorLitro = kilometros / litros;
-
-
-    Console.WriteLine("Kilometros por litro:" + kilometrosPorLitro);
-
-}
-catch (DivideByZeroException e)
-{
-    Console.WriteLine("No se puede dividir en 0 " + e.Message);
-}
-catch (FormatException e)
-{
-    Console.WriteLine("metiste una letra " + e.Message);
+    private static void GetProvinciasID()
+    {
+        var url = $"https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre";
+        var request = (HttpWebRequest)WebRequest.Create(url);
+        request.Method = "GET";
+        request.ContentType = "aplication/json";
+        request.Accept = "aplication/json";
+        try
+        {
+            using (WebResponse response = request.GetResponse());
+            {
+                using (Stream strReader = response.GetResponseStream())
+                {
+                    if (strReader == null) return;
+                    using (StreamReader objReader = new StreamReader(strReader))
+                    {
+                        string responseBody = objReader.ReadToEnd();
+                        
+                    }
+                }
+            }
+        }
+        catch (System.Exception)
+        {
+            
+            throw;
+        }
+    }
 }
