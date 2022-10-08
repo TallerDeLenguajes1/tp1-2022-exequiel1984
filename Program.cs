@@ -2,41 +2,48 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Text.Json;
 
 namespace ProvinciasID
 {
-    GetProvinciasArgentinas();
-
-    private static void GetProvinciasArgentinas()
+    partial class Program
     {
-        var url = $"https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre";
-        var request = (HttpWebRequest)WebRequest.Create(url);
-        request.Method = "GET";
-        request.ContentType = "aplication/json";
-        request.Accept = "aplication/json";
-        try
+        static void Main(string[] args)
         {
-            using (WebResponse response = request.GetResponse());
+            GetProvinciasArgentinas();
+        }
+
+        private static void GetProvinciasArgentinas()
+        {
+            var url = $"https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre";
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+            request.ContentType = "aplication/json";
+            request.Accept = "aplication/json";
+            try
             {
-                using (Stream strReader = response.GetResponseStream())
+                using (WebResponse response = request.GetResponse())
                 {
-                    if (strReader == null) return;
-                    using (StreamReader objReader = new StreamReader(strReader))
+                    using (Stream strReader = response.GetResponseStream())
                     {
-                        string responseBody = objReader.ReadToEnd();
-                        ProvinciasArgentinas ListProvincias = JsonSerializer.Deserialize<ProvinciasArgentinas>(responseBody);
-                        foreach (Provincia Prov in ListProvincias.Provincias)
+                        if (strReader == null) return;
+                        using (StreamReader objReader = new StreamReader(strReader))
                         {
-                            Console.WriteLine($"Id: {0} Nombre: {1}", Prov.Id, Prov.Nombre);
+                            string responseBody = objReader.ReadToEnd();
+                            ProvinciasArgentina ListProvincias = JsonSerializer.Deserialize<ProvinciasArgentina>(responseBody);
+                            foreach (Provincia Prov in ListProvincias.Provincias)
+                            {
+                                Console.WriteLine($"Id: {0} Nombre: {1}", Prov.Id, Prov.Nombre);
+                            }
                         }
                     }
                 }
             }
-        }
-        catch (WebException ex)
-        {
-            Console.WriteLine("Problemas de acceso a la API");
-            throw;
+            catch (WebException ex)
+            {
+                Console.WriteLine("Problemas de acceso a la API");
+                throw;
+            }
         }
     }
 }

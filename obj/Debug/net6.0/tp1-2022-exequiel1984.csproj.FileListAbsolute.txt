@@ -21,3 +21,10 @@ C:\Users\Exequiel\taller\tp1-2022-exequiel1984\obj\Debug\net6.0\tp1-2022-exequie
 C:\Users\Exequiel\taller\tp1-2022-exequiel1984\obj\Debug\net6.0\tp1-2022-exequiel1984.dll
 C:\Users\Exequiel\taller\tp1-2022-exequiel1984\obj\Debug\net6.0\refint\tp1-2022-exequiel1984.dll
 C:\Users\Exequiel\taller\tp1-2022-exequiel1984\obj\Debug\net6.0\tp1-2022-exequiel1984.pdb
+C:\Users\Exequiel\taller\tp1-2022-exequiel1984\bin\Debug\net6.0\tp1-2022-exequiel1984.exe
+C:\Users\Exequiel\taller\tp1-2022-exequiel1984\bin\Debug\net6.0\tp1-2022-exequiel1984.deps.json
+C:\Users\Exequiel\taller\tp1-2022-exequiel1984\bin\Debug\net6.0\tp1-2022-exequiel1984.runtimeconfig.json
+C:\Users\Exequiel\taller\tp1-2022-exequiel1984\bin\Debug\net6.0\tp1-2022-exequiel1984.dll
+C:\Users\Exequiel\taller\tp1-2022-exequiel1984\bin\Debug\net6.0\tp1-2022-exequiel1984.pdb
+C:\Users\Exequiel\taller\tp1-2022-exequiel1984\obj\Debug\net6.0\tp1-2022-exequiel1984.genruntimeconfig.cache
+C:\Users\Exequiel\taller\tp1-2022-exequiel1984\obj\Debug\net6.0\ref\tp1-2022-exequiel1984.dll

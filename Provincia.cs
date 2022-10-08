@@ -1,6 +1,7 @@
 // Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
 
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace ProvinciasID
 {
@@ -19,7 +20,7 @@ namespace ProvinciasID
             public string Nombre { get; set; }
         }
 
-        public class ProvinciasArgentinas
+        public class ProvinciasArgentina
         {
             [JsonPropertyName("cantidad")]
             public int Cantidad { get; set; }
