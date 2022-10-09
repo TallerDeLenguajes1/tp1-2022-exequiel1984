@@ -1,4 +1,4 @@
-namespace Punto3
+namespace RRHH
 {
     public class Empleado
     {
@@ -27,9 +27,27 @@ namespace Punto3
             return antiguedad;
         }
 
+        public int CalcularEdad(DateTime FechaNacimiento)
+        {
+            int edad = DateTime.Now.Year - FechaNacimiento.Year;
 
+            if (DateTime.Now.Month < FechaNacimiento.Month ||(DateTime.Now.Month == FechaNacimiento.Month && DateTime.Now.Day < FechaNacimiento.Day))
+            {
+                edad--;
+            }
 
+            return edad;
+        }
 
+        public float CalcularSalario(float SueldoBasico, int Antiguedad)
+        {
+            float PorcentajeAdicional = 1;
+            float PorcentajeDescuento = 15;
+            float Adicional = Antiguedad * PorcentajeAdicional / 100;
+            float Descuento = SueldoBasico * PorcentajeDescuento / 100;
+            float Salario = SueldoBasico + Adicional - Descuento;
+            return Salario;
+        }
 
 
 

@@ -1,4 +1,4 @@
-namespace Punto3
+namespace RRHH
 {
     public class DatosPersonales{
         private string nombre;
