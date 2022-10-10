@@ -15,11 +15,11 @@ namespace RRHH
             this.DataPro = dataProEmpleado;
         }
 
-        public int CalcularAntiguedad(DateTime FechaIngreso)
+        public int CalcularAntiguedad()
         {
-            int antiguedad = DateTime.Now.Year - FechaIngreso.Year;
+            int antiguedad = DateTime.Now.Year - DataPersonal.FechaIngreso.Year;
 
-            if (DateTime.Now.Month < FechaIngreso.Month ||(DateTime.Now.Month == FechaIngreso.Month && DateTime.Now.Day < FechaIngreso.Day))
+            if (DateTime.Now.Month < DataPersonal.FechaIngreso.Month ||(DateTime.Now.Month == DataPersonal.FechaIngreso.Month && DateTime.Now.Day < DataPersonal.FechaIngreso.Day))
             {
                 antiguedad--;
             }
@@ -27,11 +27,11 @@ namespace RRHH
             return antiguedad;
         }
 
-        public int CalcularEdad(DateTime FechaNacimiento)
+        public int CalcularEdad()
         {
-            int edad = DateTime.Now.Year - FechaNacimiento.Year;
+            int edad = DateTime.Now.Year - DataPersonal.FechaNacimiento.Year;
 
-            if (DateTime.Now.Month < FechaNacimiento.Month ||(DateTime.Now.Month == FechaNacimiento.Month && DateTime.Now.Day < FechaNacimiento.Day))
+            if (DateTime.Now.Month < DataPersonal.FechaNacimiento.Month ||(DateTime.Now.Month == DataPersonal.FechaNacimiento.Month && DateTime.Now.Day < DataPersonal.FechaNacimiento.Day))
             {
                 edad--;
             }
@@ -39,13 +39,22 @@ namespace RRHH
             return edad;
         }
 
-        public float CalcularSalario(float SueldoBasico, int Antiguedad)
+        public float CalcularSalario()
         {
-            float PorcentajeAdicional = 1;
+            float PorcentajeAdicional = 0;
             float PorcentajeDescuento = 15;
+            int Antiguedad = CalcularAntiguedad();
+            if (Antiguedad > 20)
+            {
+                PorcentajeAdicional = 25;
+            } else
+            {
+                PorcentajeAdicional = Antiguedad;
+            }
+    
             float Adicional = Antiguedad * PorcentajeAdicional / 100;
-            float Descuento = SueldoBasico * PorcentajeDescuento / 100;
-            float Salario = SueldoBasico + Adicional - Descuento;
+            float Descuento = DataPro.SueldoBasico * PorcentajeDescuento / 100;
+            float Salario = DataPro.SueldoBasico + Adicional - Descuento;
             return Salario;
         }
 
