@@ -57,9 +57,5 @@ namespace RRHH
             float Salario = DataPro.SueldoBasico + Adicional - Descuento;
             return Salario;
         }
-
-
-
-
     }
 }
