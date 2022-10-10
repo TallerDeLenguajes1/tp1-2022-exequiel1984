@@ -4,22 +4,25 @@ namespace RRHH
     {
         private DatosPersonales dataPersonal;
         private DatosProfesionales dataPro;
+        private float sueldoBasico;
 
         public DatosPersonales DataPersonal { get => dataPersonal; set => dataPersonal = value; }
         public DatosProfesionales DataPro { get => dataPro; set => dataPro = value; }
+        public float SueldoBasico { get => sueldoBasico; set => sueldoBasico = value; }
 
         public Empleado () {}
 
         public Empleado (DatosPersonales dataPersonalEmpleado, DatosProfesionales dataProEmpleado){
             this.DataPersonal = dataPersonalEmpleado;
             this.DataPro = dataProEmpleado;
+            this.SueldoBasico = 50000;
         }
 
         public int CalcularAntiguedad()
         {
-            int antiguedad = DateTime.Now.Year - DataPersonal.FechaIngreso.Year;
+            int antiguedad = DateTime.Now.Year - DataPro.FechaIngreso.Year;
 
-            if (DateTime.Now.Month < DataPersonal.FechaIngreso.Month ||(DateTime.Now.Month == DataPersonal.FechaIngreso.Month && DateTime.Now.Day < DataPersonal.FechaIngreso.Day))
+            if (DateTime.Now.Month < DataPro.FechaIngreso.Month ||(DateTime.Now.Month == DataPro.FechaIngreso.Month && DateTime.Now.Day < DataPro.FechaIngreso.Day))
             {
                 antiguedad--;
             }
@@ -53,8 +56,8 @@ namespace RRHH
             }
     
             float Adicional = Antiguedad * PorcentajeAdicional / 100;
-            float Descuento = DataPro.SueldoBasico * PorcentajeDescuento / 100;
-            float Salario = DataPro.SueldoBasico + Adicional - Descuento;
+            float Descuento = SueldoBasico * PorcentajeDescuento / 100;
+            float Salario = SueldoBasico + Adicional - Descuento;
             return Salario;
         }
     }
