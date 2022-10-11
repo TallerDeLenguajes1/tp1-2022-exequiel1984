@@ -70,59 +70,118 @@ namespace RRHH
             }
             catch (FormatException ex)
             {
-                Log.Fatal(ex, "Ingreso un valor invalido");
-                Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
+                var mensaje = "Error message: " + ex.Message;
+
+                if (ex.InnerException != null)
+                {
+                    mensaje = mensaje + " Inner exception: " + ex.InnerException.Message;
+                }
+
+                mensaje = mensaje + " Stack trace: " + ex.StackTrace;
+
+                Log.Error(mensaje);
+
+                Console.WriteLine("El formato de un argumento es inválido");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
-                Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
                 Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
                 Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
                 throw;
             }
             catch (OverflowException ex)
             {
-                Log.Fatal(ex, "Ingreso un numero demasiado grande");
-                Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
+                var mensaje = "Error message: " + ex.Message;
+
+                if (ex.InnerException != null)
+                {
+                    mensaje = mensaje + " Inner exception: " + ex.InnerException.Message;
+                }
+
+                mensaje = mensaje + " Stack trace: " + ex.StackTrace;
+
+                Log.Error(mensaje);
+
+                Console.WriteLine("Una operación aritmética, de casteo o conversión ha sufrido una sobrecarga");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
-                Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
                 Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
                 Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
+                throw;
             }
             catch (IOException ex)
             {
-                Log.Fatal(ex, "\nError detectado, ha ocurrido un error de Entrada/Salida");
-                Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
+                var mensaje = "Error message: " + ex.Message;
+
+                if (ex.InnerException != null)
+                {
+                    mensaje = mensaje + " Inner exception: " + ex.InnerException.Message;
+                }
+
+                mensaje = mensaje + " Stack trace: " + ex.StackTrace;
+
+                Log.Error(mensaje);
+
+                Console.WriteLine("Ha ocurrido un error de Entrada/Salida");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
-                Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
                 Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
                 Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
+                throw;
             }
             catch (OutOfMemoryException ex)
             {
-                Log.Fatal(ex, "\nError detectado, no hay suficiente espacio de memoria para continuar la ejecución del programa");
-                Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
+                var mensaje = "Error message: " + ex.Message;
+
+                if (ex.InnerException != null)
+                {
+                    mensaje = mensaje + " Inner exception: " + ex.InnerException.Message;
+                }
+
+                mensaje = mensaje + " Stack trace: " + ex.StackTrace;
+
+                Log.Error(mensaje);
+
+                Console.WriteLine("No hay suficiente espacio de memoria para continuar la ejecución del programa");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
-                Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
                 Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
                 Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
+                throw;
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                Log.Fatal(ex, "\nError detectado, el valor de un argumento sobrepasa el rango límite definido");
-                Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
+                var mensaje = "Error message: " + ex.Message;
+
+                if (ex.InnerException != null)
+                {
+                    mensaje = mensaje + " Inner exception: " + ex.InnerException.Message;
+                }
+
+                mensaje = mensaje + " Stack trace: " + ex.StackTrace;
+
+                Log.Error(mensaje);
+
+                Console.WriteLine("El valor de un argumento sobrepasa el rango límite definido");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
-                Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
                 Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
                 Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
+                throw;
             }
             catch (ArgumentNullException ex)
             {
-                Log.Fatal(ex, "\nError detectado, se ha pasado un valor nulo a un método que no acepta valores nulos");
-                Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
+                var mensaje = "Error message: " + ex.Message;
+
+                if (ex.InnerException != null)
+                {
+                    mensaje = mensaje + " Inner exception: " + ex.InnerException.Message;
+                }
+
+                mensaje = mensaje + " Stack trace: " + ex.StackTrace;
+
+                Log.Error(mensaje);
+
+                Console.WriteLine("Se ha pasado un valor nulo a un método que no acepta valores nulos");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
-                Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
                 Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
                 Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
-            }        
+                throw;
+            }     
         }
 
         private static void MostrarListaEmpleados(List<Empleado> listaEmpleados)

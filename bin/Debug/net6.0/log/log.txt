@@ -10,3 +10,9 @@
    at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
    at System.Convert.ToInt32(String value)
    at RRHH.Program.CargarListaEmpleados(List`1 listaEmpleados) in C:\Users\Exequiel\taller\practico1\tp1-2022-exequiel1984\Program.cs:line 23
+2022-10-11 19:28:53.7002|ERROR|RRHH.Program|Error message: Value was either too large or too small for an Int32. Stack trace:    at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToInt32(String value)
+   at RRHH.Program.CargarListaEmpleados(List`1 listaEmpleados) in C:\Users\Exequiel\taller\practico1\tp1-2022-exequiel1984\Program.cs:line 25
+2022-10-11 19:32:15.6620|ERROR|RRHH.Program|Error message: Value was either too large or too small for an Int32. Stack trace:    at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToInt32(String value)
+   at RRHH.Program.CargarListaEmpleados(List`1 listaEmpleados) in C:\Users\Exequiel\taller\practico1\tp1-2022-exequiel1984\Program.cs:line 25
