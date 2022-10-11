@@ -21,14 +21,39 @@
                 int CantidadEmpleadosACargar = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < CantidadEmpleadosACargar; i++)
                 {
-                    Empleado NuevoEmpleado = new Empleado();
+                    Console.WriteLine($"---CARGA EMPLEADO {i+1} ---");
+                    
+                    var DatospersonalesEmpleadoNuevo = new DatosPersonales();
+                    Console.WriteLine("Ingrese el apellido:");
+                    DatospersonalesEmpleadoNuevo.Apellido = Console.ReadLine();
+                    Console.WriteLine("Ingrese el nombre:");
+                    DatospersonalesEmpleadoNuevo.Nombre = Console.ReadLine();
+                    Console.WriteLine("Ingrese fecha de nacimiento:");
+                    DatospersonalesEmpleadoNuevo.FechaNacimiento = Convert.ToDateTime(Console.ReadLine());
+                    
+                    Console.WriteLine("Ingrese el estado civil (Soltero/Casado/Divorciado):");
+                    DatospersonalesEmpleadoNuevo.EstadoCivil = Console.ReadLine();
+                    if (DatospersonalesEmpleadoNuevo.EstadoCivil == "Casado")
+                    {
+                        Console.WriteLine("Ingrese la cantidad de hijos:");
+                        DatospersonalesEmpleadoNuevo.CantidadHijos = Convert.ToInt32(Console.ReadLine());
+                    }
+                    if (DatospersonalesEmpleadoNuevo.EstadoCivil == "Divorciado")
+                    {
+                        Console.WriteLine("Ingrese la fecha del divorcio:");
+                        DatospersonalesEmpleadoNuevo.FechaDivorcio = Convert.ToDateTime(Console.ReadLine());
+                    }
 
-                    Console.WriteLine("Ingrese el apellido del empleado: ");
-                    NuevoEmpleado.DataPersonal.Apellido = Console.ReadLine();
+                    
 
 
-            
-                    listaEmpleados.add(NuevoEmpleado);
+                    var DatosProfesionalesEmpleadoNuevo = new DatosProfesionales();
+                    Console.WriteLine("Ingrese fecha de ingreso: ");
+                    DatosProfesionalesEmpleadoNuevo.FechaIngreso = Convert.ToDateTime(Console.ReadLine());
+
+                    Empleado NuevoEmpleado = new Empleado(DatospersonalesEmpleadoNuevo, DatosProfesionalesEmpleadoNuevo);
+
+                    listaEmpleados.Add(NuevoEmpleado);
                 }
             }
             catch (FormatException ex)
@@ -49,16 +74,15 @@
                 Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
                 Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
                 Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
-            }
-
-            
+            }        
         }
 
         private static void MostrarListaEmpleados(List<Empleado> listaEmpleados)
         {
-            foreach (Emple item in listaEmpleados)
+            Console.WriteLine("\n---LISTADO DE EMPLEADOS---");
+            foreach (var empleado in listaEmpleados)
             {
-                Console.WriteLine("Apellido: " + Emple.DataPersonal.Apellido);
+                empleado.MostrarEmpleado();
             }
         }
     }

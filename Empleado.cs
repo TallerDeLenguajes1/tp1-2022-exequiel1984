@@ -15,7 +15,7 @@ namespace RRHH
         public Empleado (DatosPersonales dataPersonalEmpleado, DatosProfesionales dataProEmpleado){
             this.DataPersonal = dataPersonalEmpleado;
             this.DataPro = dataProEmpleado;
-            this.SueldoBasico = 50000;
+            this.SueldoBasico = 100000;
         }
 
         public int CalcularAntiguedad()
@@ -47,6 +47,7 @@ namespace RRHH
             float PorcentajeAdicional = 0;
             float PorcentajeDescuento = 15;
             int Antiguedad = CalcularAntiguedad();
+
             if (Antiguedad > 20)
             {
                 PorcentajeAdicional = 25;
@@ -55,10 +56,19 @@ namespace RRHH
                 PorcentajeAdicional = Antiguedad;
             }
     
-            float Adicional = Antiguedad * PorcentajeAdicional / 100;
+            float Adicional = SueldoBasico * PorcentajeAdicional / 100;
             float Descuento = SueldoBasico * PorcentajeDescuento / 100;
             float Salario = SueldoBasico + Adicional - Descuento;
             return Salario;
+        }
+
+        public void MostrarEmpleado()
+        {
+            Console.WriteLine("\nApellido: " + DataPersonal.Apellido);
+            Console.WriteLine("Nombre: " + DataPersonal.Nombre);
+            Console.WriteLine("Edad: " + CalcularEdad());
+            Console.WriteLine("Antiguedad: " + CalcularAntiguedad());
+            Console.WriteLine("Salario: " + CalcularSalario());
         }
     }
 }
