@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Exequiel\\taller\\tp1-2022-exequiel1984\\tp1-2022-exequiel1984.csproj": {}
+    "C:\\Users\\Exequiel\\taller\\practico1\\tp1-2022-exequiel1984\\tp1-2022-exequiel1984.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Exequiel\\taller\\tp1-2022-exequiel1984\\tp1-2022-exequiel1984.csproj": {
+    "C:\\Users\\Exequiel\\taller\\practico1\\tp1-2022-exequiel1984\\tp1-2022-exequiel1984.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Exequiel\\taller\\tp1-2022-exequiel1984\\tp1-2022-exequiel1984.csproj",
+        "projectUniqueName": "C:\\Users\\Exequiel\\taller\\practico1\\tp1-2022-exequiel1984\\tp1-2022-exequiel1984.csproj",
         "projectName": "tp1-2022-exequiel1984",
-        "projectPath": "C:\\Users\\Exequiel\\taller\\tp1-2022-exequiel1984\\tp1-2022-exequiel1984.csproj",
+        "projectPath": "C:\\Users\\Exequiel\\taller\\practico1\\tp1-2022-exequiel1984\\tp1-2022-exequiel1984.csproj",
         "packagesPath": "C:\\Users\\Exequiel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Exequiel\\taller\\tp1-2022-exequiel1984\\obj\\",
+        "outputPath": "C:\\Users\\Exequiel\\taller\\practico1\\tp1-2022-exequiel1984\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Exequiel\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "NLog": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

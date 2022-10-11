@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gTd68WB1TnT1gcATptkwrXT15YmEi8qixWcniJBDakF0Sh21mqwUPrsBPVCFnGC2gLh2vlOdEVBto9jHK+5/8w==",
+  "dgSpecHash": "K65gX0UrCjpWO6g70N0wJiU5/siRF5Ir5/mrTUOnxSRxJI2qKTfV1O8yDrzlhIqT9joAlQYa8AuVx5lnfBcOzA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Exequiel\\taller\\tp1-2022-exequiel1984\\tp1-2022-exequiel1984.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Exequiel\\taller\\practico1\\tp1-2022-exequiel1984\\tp1-2022-exequiel1984.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Exequiel\\.nuget\\packages\\nlog\\5.0.4\\nlog.5.0.4.nupkg.sha512"
+  ],
   "logs": []
 }

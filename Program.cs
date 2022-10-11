@@ -1,8 +1,10 @@
 ﻿namespace RRHH
 {
-    internal class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        private static readonly NLog.Logger Log = NLog.LogManager.GetCurrentClassLogger();
+
+        public static void Main(string[] args)
         {
             List<Empleado> listaEmpleados = new List<Empleado>();
 
@@ -66,12 +68,13 @@
             }
             catch (FormatException ex)
             {
-                Console.WriteLine("Ingreso un valor invalido ");
+                /* Console.WriteLine("Ingreso un valor invalido ");
                 Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
                 Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
                 Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
-                Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
+                Console.WriteLine($"Diccionario con info adicional: {ex.Data}"); */
+                Log.Fatal(ex, "Ingreso un valor invalido");
                 throw;
             }
             catch (OverflowException ex)
@@ -91,6 +94,7 @@
                 Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
                 Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
                 Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
+                Log.Fatal(ex, "\nError detectado, ha ocurrido un error de Entrada/Salida");
             }
             catch (OutOfMemoryException ex)
             {
