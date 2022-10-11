@@ -6,3 +6,7 @@
    at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
    at System.Convert.ToInt32(String value)
    at RRHH.Program.CargarListaEmpleados(List`1 listaEmpleados) in C:\Users\Exequiel\taller\practico1\tp1-2022-exequiel1984\Program.cs:line 23
+2022-10-11 18:24:36.6078|FATAL|RRHH.Program|Ingreso un numero demasiado grande|System.OverflowException: Value was either too large or too small for an Int32.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Convert.ToInt32(String value)
+   at RRHH.Program.CargarListaEmpleados(List`1 listaEmpleados) in C:\Users\Exequiel\taller\practico1\tp1-2022-exequiel1984\Program.cs:line 23

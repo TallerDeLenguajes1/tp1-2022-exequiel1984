@@ -1,4 +1,6 @@
-﻿namespace RRHH
+﻿using NLog;
+
+namespace RRHH
 {
     public static class Program
     {
@@ -68,18 +70,17 @@
             }
             catch (FormatException ex)
             {
-                /* Console.WriteLine("Ingreso un valor invalido ");
+                Log.Fatal(ex, "Ingreso un valor invalido");
                 Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
                 Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
                 Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
-                Console.WriteLine($"Diccionario con info adicional: {ex.Data}"); */
-                Log.Fatal(ex, "Ingreso un valor invalido");
+                Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
                 throw;
             }
             catch (OverflowException ex)
             {
-                Console.WriteLine("Ingreso un numero demasiado grande");
+                Log.Fatal(ex, "Ingreso un numero demasiado grande");
                 Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
                 Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
@@ -88,17 +89,16 @@
             }
             catch (IOException ex)
             {
-                Console.WriteLine("\nError detectado, ha ocurrido un error de Entrada/Salida");
+                Log.Fatal(ex, "\nError detectado, ha ocurrido un error de Entrada/Salida");
                 Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
                 Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
                 Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
                 Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
-                Log.Fatal(ex, "\nError detectado, ha ocurrido un error de Entrada/Salida");
             }
             catch (OutOfMemoryException ex)
             {
-                Console.WriteLine("\nError detectado, no hay suficiente espacio de memoria para continuar la ejecución del programa");
+                Log.Fatal(ex, "\nError detectado, no hay suficiente espacio de memoria para continuar la ejecución del programa");
                 Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
                 Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
@@ -107,7 +107,7 @@
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                Console.WriteLine("\nError detectado, el valor de un argumento sobrepasa el rango límite definido");
+                Log.Fatal(ex, "\nError detectado, el valor de un argumento sobrepasa el rango límite definido");
                 Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
                 Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
@@ -116,7 +116,7 @@
             }
             catch (ArgumentNullException ex)
             {
-                Console.WriteLine("\nError detectado, se ha pasado un valor nulo a un método que no acepta valores nulos");
+                Log.Fatal(ex, "\nError detectado, se ha pasado un valor nulo a un método que no acepta valores nulos");
                 Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
                 Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
