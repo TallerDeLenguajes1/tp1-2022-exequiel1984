@@ -44,7 +44,15 @@
                         DatospersonalesEmpleadoNuevo.FechaDivorcio = Convert.ToDateTime(Console.ReadLine());
                     }
 
-                    
+                    Console.WriteLine("¿Tiene titulo universitario (si/no)?");
+                    string ConsultaTitulo = Console.ReadLine();
+                    if (ConsultaTitulo == "si")
+                    {
+                        Console.WriteLine("Ingrese el titulo:");
+                        DatospersonalesEmpleadoNuevo.Titulo = Console.ReadLine();
+                        Console.WriteLine("Ingrese la universidad:");
+                        DatospersonalesEmpleadoNuevo.Universidad = Console.ReadLine();
+                    }
 
 
                     var DatosProfesionalesEmpleadoNuevo = new DatosProfesionales();
@@ -69,6 +77,42 @@
             catch (OverflowException ex)
             {
                 Console.WriteLine("Ingreso un numero demasiado grande");
+                Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
+                Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
+                Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
+                Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
+                Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine("\nError detectado, ha ocurrido un error de Entrada/Salida");
+                Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
+                Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
+                Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
+                Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
+                Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
+            }
+            catch (OutOfMemoryException ex)
+            {
+                Console.WriteLine("\nError detectado, no hay suficiente espacio de memoria para continuar la ejecución del programa");
+                Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
+                Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
+                Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
+                Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
+                Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine("\nError detectado, el valor de un argumento sobrepasa el rango límite definido");
+                Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
+                Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
+                Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
+                Console.WriteLine($"Nombre que lanza la excepcion: {ex.TargetSite}");
+                Console.WriteLine($"Diccionario con info adicional: {ex.Data}");
+            }
+            catch (ArgumentNullException ex)
+            {
+                Console.WriteLine("\nError detectado, se ha pasado un valor nulo a un método que no acepta valores nulos");
                 Console.WriteLine($"Mensaje para el usuario: {ex.Message}");
                 Console.WriteLine($"Nombre de la fuente del error: {ex.Source}");
                 Console.WriteLine($"Pila de llamadas: {ex.StackTrace}");
